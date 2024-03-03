@@ -1,32 +1,29 @@
 import fs from 'fs';
 import path from 'path';
-import { compileMDX } from 'next-mdx-remote/rsc';
+import { CustomMDX } from '@/components/mdx/mdx-remote';
+import matter from 'gray-matter';
 
 const pathToPosts = path.join(process.cwd(), 'src/posts');
 
 export async function generateMetadata({ params }) {
   const pathToFile = path.join(pathToPosts, `${params.slug}.mdx`);
   const source = fs.readFileSync(pathToFile, 'utf-8');
-
-  const { content, frontmatter } = await compileMDX({
-    source: source,
-    options: { parseFrontmatter: true }
-  });
+  const { content, data } = matter(source);
 
   return {
-    title: frontmatter.title,
-    description: frontmatter.description
+    title: data.title,
+    description: data.description
   };
 }
 
 export default async function BlogPage({ params }) {
   const pathToFile = path.join(pathToPosts, `${params.slug}.mdx`);
   const source = fs.readFileSync(pathToFile, 'utf-8');
+  const { content, data } = matter(source);
 
-  const { content, frontmatter } = await compileMDX({
-    source: source,
-    options: { parseFrontmatter: true }
-  });
-
-  return <>{content}</>;
+  return (
+    <>
+      <CustomMDX source={content} />
+    </>
+  );
 }
