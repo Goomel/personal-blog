@@ -2,20 +2,36 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-export const getMDXFile = (dir, filename) => {
-  const MDXFile = path.join(dir, `${filename}.mdx`);
-  return fs.existsSync(MDXFile) ? MDXFile : null;
+const pathToPosts = path.join(process.cwd(), 'src/posts');
+
+const getMDXFile = (filename) => {
+  const MDXFilePath = path.join(pathToPosts, `${filename}.mdx`);
+  return fs.existsSync(MDXFilePath) ? MDXFilePath : null;
 };
 
-export const readMDXFile = (pathToFile) => {
+const readMDXFile = (pathToFile) => {
   return fs.readFileSync(pathToFile, 'utf-8');
 };
 
-export const getPostData = (dir, postName) => {
-  const mdxFile = getMDXFile(dir, postName);
-  if (!mdxFile) return null;
+export const getPostData = (postName) => {
+  const MDXFile = getMDXFile(postName);
+  if (!MDXFile) return null;
   else {
-    const source = readMDXFile(mdxFile);
+    const source = readMDXFile(MDXFile);
     return matter(source);
   }
+};
+
+const getAllMDXFileNames = () => {
+  const files = fs.readdirSync(pathToPosts);
+  return files.map((file) => path.parse(file).name);
+};
+
+export const getBlogPosts = () => {
+  const postNames = getAllMDXFileNames();
+  let blogPosts = [];
+  postNames.forEach((postName) => {
+    blogPosts.push(getPostData(postName));
+  });
+  return blogPosts;
 };
