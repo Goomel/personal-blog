@@ -18,7 +18,8 @@ export const getPostData = (postName) => {
   if (!MDXFile) return null;
   else {
     const source = readMDXFile(MDXFile);
-    return matter(source);
+    const { content, data } = matter(source);
+    return { ...data, content };
   }
 };
 
@@ -31,7 +32,8 @@ export const getBlogPosts = () => {
   const postNames = getAllMDXFileNames();
   let blogPosts = [];
   postNames.forEach((postName) => {
-    blogPosts.push(getPostData(postName));
+    const post = { slug: postName, ...getPostData(postName) };
+    blogPosts.push(post);
   });
   return blogPosts;
 };
