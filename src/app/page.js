@@ -9,9 +9,5 @@ export const metadata = {
 export default function Home() {
   const allPosts = getBlogPosts();
 
-  return (
-    <main>
-      <PostListing posts={allPosts} />
-    </main>
-  );
+  return <PostListing posts={allPosts} />;
 }

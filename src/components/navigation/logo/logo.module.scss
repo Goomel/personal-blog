@@ -1,0 +1,18 @@
+@import '@/styles/mixins.scss';
+
+.logo {
+  font-size: 16px;
+  color: var(--white);
+}
+
+@include mediaquery('sm') {
+  .logo {
+    font-size: 24px;
+  }
+}
+
+@include mediaquery('lg') {
+  .logo {
+    font-size: 32px;
+  }
+}
