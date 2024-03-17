@@ -1,26 +1,50 @@
 @import '@/styles/mixins.scss';
 
 .hamburgerButton {
+  --hamburger-line-height: 2px;
+  --gap-between-lines: 6px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--gap-between-lines);
   cursor: pointer;
-  width: 60px;
-  height: 60px;
-  background-color: var(--yellow-500);
-  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+
+  &.isOpen {
+    .hamburgerLine {
+      &:first-child {
+        transform: translateY(
+            calc(
+              (var(--gap-between-lines) / 2) +
+                (var(--hamburger-line-height) / 2)
+            )
+          )
+          rotate(45deg);
+        // transform-origin: 50% 0%;
+      }
+      &:last-child {
+        transform: translateY(
+            calc(
+              (
+                  (var(--gap-between-lines) / 2) +
+                    (var(--hamburger-line-height) / 2)
+                ) * -1
+            )
+          )
+          rotate(-45deg);
+        // transform-origin: 50% 100%;
+      }
+    }
+  }
 }
 
 .hamburgerLine {
-  background-color: var(--black-500);
+  background-color: var(--white);
   width: 24px;
   height: 2px;
-}
-
-@include mediaquery('lg') {
-  .hamburgerButton {
-    display: none;
-  }
+  transition: transform 0.2s;
+  will-change: transform;
 }

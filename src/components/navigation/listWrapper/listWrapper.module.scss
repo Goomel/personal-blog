@@ -1,0 +1,14 @@
+@import '@/styles/mixins.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@include mediaquery('lg') {
+  .wrapper {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}

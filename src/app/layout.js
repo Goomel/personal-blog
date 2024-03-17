@@ -1,18 +1,20 @@
-import Navigation from '@/components/navigation/Navigation';
-import '@/styles/main.scss';
-
 import { Work_Sans, Anton } from 'next/font/google';
 
 const work_sans = Work_Sans({
   subsets: ['latin'],
-  display: 'swap'
+  display: 'swap',
+  variable: '--font-work-sans'
 });
 
 const anton = Anton({
   subsets: ['latin'],
   display: 'swap',
-  weight: '400'
+  weight: '400',
+  variable: '--font-anton'
 });
+
+import Navigation from '@/components/navigation/Navigation';
+import '@/styles/main.scss';
 
 export const metadata = {
   title: 'Create Next App',
@@ -22,7 +24,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={work_sans.className}>
+      <body className={`${work_sans.variable} ${anton.variable}`}>
         <Navigation />
         <main>{children}</main>
       </body>

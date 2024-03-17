@@ -1,0 +1,25 @@
+@import '@/styles/mixins.scss';
+
+.navigationWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+}
+
+.innerWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+@include mediaquery('lg') {
+  .navigationWrapper {
+    padding: 2rem 5rem;
+  }
+
+  .leftLinksWrapper {
+    flex-direction: row;
+  }
+}
