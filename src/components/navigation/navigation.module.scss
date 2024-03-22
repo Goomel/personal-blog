@@ -17,10 +17,12 @@
   padding-top: 5rem;
   background: var(--black-500);
   transform: translateX(100%);
+  opacity: 0;
   transition: transform 0.3s;
 
   &.active {
     transform: translateX(0);
+    opacity: 100%;
   }
 
   li {
@@ -36,6 +38,7 @@
   .innerWrapper {
     transition: none;
     transform: translateX(0);
+    opacity: 100%;
     display: flex;
     position: static;
     height: auto;
