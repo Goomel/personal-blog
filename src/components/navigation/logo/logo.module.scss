@@ -6,7 +6,7 @@
   font-family: var(--font-anton);
 }
 
-@include mediaquery('lg') {
+@include mediaquery('md') {
   .logo {
     font-size: var(--text-4xl);
   }

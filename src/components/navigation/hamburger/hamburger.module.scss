@@ -12,6 +12,7 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
+  z-index: 1;
 
   &.isOpen {
     .hamburgerLine {
@@ -35,7 +36,6 @@
             )
           )
           rotate(-45deg);
-        // transform-origin: 50% 100%;
       }
     }
   }
@@ -47,4 +47,10 @@
   height: 2px;
   transition: transform 0.2s;
   will-change: transform;
+}
+
+@include mediaquery('md') {
+  .hamburgerButton {
+    display: none;
+  }
 }

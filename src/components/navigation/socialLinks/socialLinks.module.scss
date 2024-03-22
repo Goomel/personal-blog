@@ -1,6 +1,7 @@
+@import '@/styles/mixins.scss';
+
 .wrapper {
-  display: flex;
-  align-items: center;
+  display: none;
 }
 
 .link {
@@ -24,5 +25,12 @@
       width: 1.25rem;
       height: 1.25rem;
     }
+  }
+}
+
+@include mediaquery('md') {
+  .wrapper {
+    display: flex;
+    align-items: center;
   }
 }
