@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useMediaQuery } from '@uidotdev/usehooks';
+import cn from 'classnames';
 import Logo from '@/components/navigation/logo/Logo';
 import Hamburger from './hamburger/Hamburger';
 import ListWrapper from './listWrapper/ListWrapper';
@@ -23,9 +24,7 @@ const Navigation = () => {
     <nav className={styles.navigationWrapper}>
       <Logo />
       <Hamburger isOpen={isMenuOpen} handleClick={toggleMenuOpen} />
-      <div
-        className={`${styles.innerWrapper} ${isMenuOpen ? styles.active : ''}`}
-      >
+      <div className={cn(styles.innerWrapper, { [styles.active]: isMenuOpen })}>
         <ListWrapper />
         <SocialLinks />
       </div>

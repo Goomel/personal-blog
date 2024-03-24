@@ -3,7 +3,6 @@
 .navigationWrapper {
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem 2rem;
 }
 
 .innerWrapper {
@@ -31,10 +30,6 @@
 }
 
 @include mediaquery('md') {
-  .navigationWrapper {
-    padding: 2rem 5rem;
-  }
-
   .innerWrapper {
     transition: none;
     transform: translateX(0);

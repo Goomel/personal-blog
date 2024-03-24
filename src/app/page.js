@@ -1,5 +1,5 @@
-// import { getBlogPosts } from '@/lib/mdxUtils';
-// import PostListing from '@/components/blog/postListing/PostListing';
+import { getBlogPosts } from '@/lib/mdxUtils';
+import PostListing from '@/components/blog/postListing/PostListing';
 
 export const metadata = {
   title: 'Page Home',
@@ -7,8 +7,8 @@ export const metadata = {
 };
 
 export default function Home() {
-  // const allPosts = getBlogPosts();
+  const allPosts = getBlogPosts();
 
-  // return <PostListing posts={allPosts} />;
-  return '';
+  return <PostListing posts={allPosts} />;
+  // return '';
 }

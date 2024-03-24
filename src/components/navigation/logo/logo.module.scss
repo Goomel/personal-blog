@@ -6,6 +6,10 @@
   font-family: var(--font-anton);
 }
 
+.dot {
+  color: var(--yellow-500);
+}
+
 @include mediaquery('md') {
   .logo {
     font-size: var(--text-4xl);

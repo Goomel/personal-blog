@@ -5,7 +5,7 @@ import styles from './logo.module.scss';
 const Logo = () => {
   return (
     <Link href="/" className={styles.logo}>
-      jg.dev
+      jg<span className={styles.dot}>.</span>dev
     </Link>
   );
 };

@@ -19,7 +19,7 @@ export const getPostData = (postName) => {
   else {
     const source = readMDXFile(MDXFile);
     const { content, data } = matter(source);
-    return { ...data, content };
+    return { metadata: data, content };
   }
 };
 

@@ -1,4 +1,6 @@
 import { Work_Sans, Anton } from 'next/font/google';
+import cn from 'classnames';
+import styles from './layout.module.scss';
 
 const work_sans = Work_Sans({
   subsets: ['latin'],
@@ -24,9 +26,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={`${work_sans.variable} ${anton.variable}`}>
-        <Navigation />
-        <main>{children}</main>
+      <body className={cn(work_sans.variable, anton.variable)}>
+        <div className={styles.layoutContainer}>
+          <Navigation />
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
