@@ -2,16 +2,40 @@
 
 .listItem {
   list-style-type: none;
-  padding: 0.5rem 0;
 
   a {
+    position: relative;
     font-size: var(--text-lg);
     font-family: var(--font-work-sans);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -0.5rem;
+      right: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--yellow-500);
+      transform: scaleX(0);
+      transform-origin: 100%;
+      transition: transform 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        transform: scaleX(100%);
+      }
+    }
   }
 }
 
 @include mediaquery('lg') {
   .listItem {
     padding: 0;
+
+    a::after {
+      width: 60%;
+    }
   }
 }
