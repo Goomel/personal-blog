@@ -49,7 +49,7 @@
   will-change: transform;
 }
 
-@include mediaquery('md') {
+@include mediaquery('lg') {
   .hamburgerButton {
     display: none;
   }

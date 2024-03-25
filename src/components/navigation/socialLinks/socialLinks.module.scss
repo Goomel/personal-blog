@@ -28,7 +28,7 @@
   }
 }
 
-@include mediaquery('md') {
+@include mediaquery('lg') {
   .wrapper {
     display: flex;
     align-items: center;

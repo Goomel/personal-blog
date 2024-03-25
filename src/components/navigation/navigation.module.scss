@@ -13,27 +13,18 @@
   height: 100vh;
   align-items: center;
   flex-direction: column;
-  padding-top: 5rem;
+  padding-top: 6rem;
   background: var(--black-500);
-  transform: translateX(100%);
-  opacity: 0;
   transition: transform 0.3s;
-
-  &.active {
-    transform: translateX(0);
-    opacity: 100%;
-  }
 
   li {
     text-align: center;
   }
 }
 
-@include mediaquery('md') {
+@include mediaquery('lg') {
   .innerWrapper {
     transition: none;
-    transform: translateX(0);
-    opacity: 100%;
     display: flex;
     position: static;
     height: auto;

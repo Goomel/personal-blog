@@ -1,16 +1,17 @@
 @import '@/styles/mixins.scss';
 
 .logo {
-  font-size: var(--text-2xl);
+  font-size: var(--text-3xl);
   color: var(--white);
   font-family: var(--font-anton);
+  z-index: 3;
 }
 
 .dot {
   color: var(--yellow-500);
 }
 
-@include mediaquery('md') {
+@include mediaquery('lg') {
   .logo {
     font-size: var(--text-4xl);
   }

@@ -1,7 +1,17 @@
+@import '@/styles/mixins.scss';
+
 .listItem {
   list-style-type: none;
+  padding: 0.5rem 0;
+
   a {
     font-size: var(--text-lg);
     font-family: var(--font-work-sans);
+  }
+}
+
+@include mediaquery('lg') {
+  .listItem {
+    padding: 0;
   }
 }
