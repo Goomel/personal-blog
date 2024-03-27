@@ -6,6 +6,8 @@
 
 @include mediaquery('lg') {
   .layoutContainer {
+    max-width: 1620px;
+    margin: 0 auto;
     padding: 2rem 5rem;
   }
 }
