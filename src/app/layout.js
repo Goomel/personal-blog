@@ -1,12 +1,8 @@
 import cn from 'classnames';
-import dynamic from 'next/dynamic';
+import Navigation from '@/components/navigation/Navigation';
 import { Work_Sans, Anton } from 'next/font/google';
 import styles from './layout.module.scss';
 import '@/styles/main.scss';
-
-const Navigation = dynamic(() => import('@/components/navigation/Navigation'), {
-  ssr: false
-});
 
 const work_sans = Work_Sans({
   subsets: ['latin'],

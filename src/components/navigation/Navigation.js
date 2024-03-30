@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useMediaQuery } from '@uidotdev/usehooks';
+import { useMedia } from 'react-use';
 import cn from 'classnames';
 import Logo from '@/components/navigation/logo/Logo';
 import Hamburger from './hamburger/Hamburger';
@@ -10,7 +10,7 @@ import SocialLinks from './socialLinks/SocialLinks';
 import styles from './navigation.module.scss';
 
 const Navigation = () => {
-  const isMobileDevice = useMediaQuery('(max-width: 1024px)');
+  const isMobileDevice = useMedia('(max-width: 1024px)', false);
   const [isMenuOpen, setIsMenuOpen] = useState(!isMobileDevice);
   const toggleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
