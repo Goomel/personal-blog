@@ -1,0 +1,32 @@
+@import '@/styles/mixins.scss';
+
+.heroWrapper {
+  margin-top: 4rem;
+  max-width: 380px;
+}
+
+.title {
+  font-size: clamp(var(--text-5xl), 10vw, var(--text-8xl));
+  line-height: 1.4;
+  color: var(--white);
+  font-family: var(--font-heading);
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: var(--text-base);
+  color: var(--gray-500);
+  font-family: var(--font-sans);
+}
+
+@include mediaquery('lg') {
+  .heroWrapper {
+    margin: 6rem 0 0 5rem;
+    max-width: 480px;
+  }
+
+  .description {
+    font-size: var(--text-lg);
+  }
+}

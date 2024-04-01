@@ -1,5 +1,6 @@
 import { getBlogPosts } from '@/lib/mdxUtils';
 import PostListing from '@/components/blog/postListing/PostListing';
+import Hero from '@/components/hero/Hero';
 
 export const metadata = {
   title: 'Page Home',
@@ -9,6 +10,10 @@ export const metadata = {
 export default function Home() {
   const allPosts = getBlogPosts();
 
-  return <PostListing posts={allPosts} />;
-  // return '';
+  return (
+    <>
+      <Hero />
+      <PostListing posts={allPosts} />
+    </>
+  );
 }

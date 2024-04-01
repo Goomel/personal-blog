@@ -33,7 +33,6 @@ const ListWrapper = () => {
 
   return (
     <ul ref={container} className={styles.wrapper}>
-      <ListItem href={'/'}>Home</ListItem>
       <ListItem href={'/blog'}>Blog</ListItem>
       <ListItem href={'/o-mnie'}>O mnie</ListItem>
       <ListItem href={'#kontakt'}>Kontakt</ListItem>

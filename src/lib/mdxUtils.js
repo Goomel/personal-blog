@@ -31,9 +31,6 @@ const getAllMDXFileNames = () => {
 export const getBlogPosts = () => {
   const postNames = getAllMDXFileNames();
   let blogPosts = [];
-  postNames.forEach((postName) => {
-    const post = { slug: postName, ...getPostData(postName) };
-    blogPosts.push(post);
-  });
+  postNames.map((postName) => ({ slug: postName, ...getPostData(postName) }));
   return blogPosts;
 };
