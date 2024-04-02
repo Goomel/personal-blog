@@ -30,7 +30,9 @@ const getAllMDXFileNames = () => {
 
 export const getBlogPosts = () => {
   const postNames = getAllMDXFileNames();
-  let blogPosts = [];
-  postNames.map((postName) => ({ slug: postName, ...getPostData(postName) }));
+  const blogPosts = postNames.map((postName) => ({
+    slug: postName,
+    ...getPostData(postName)
+  }));
   return blogPosts;
 };

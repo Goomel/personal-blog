@@ -11,7 +11,7 @@ import styles from './navigation.module.scss';
 
 const Navigation = () => {
   const isMobileDevice = useMedia('(max-width: 1024px)', false);
-  const [isMenuOpen, setIsMenuOpen] = useState(!isMobileDevice);
+  const [isMenuOpen, setIsMenuOpen] = useState(isMobileDevice);
   const toggleMenuOpen = () => {
     setIsMenuOpen(!isMenuOpen);
   };
