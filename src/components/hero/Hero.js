@@ -1,22 +1,24 @@
 import React from 'react';
 import styles from './hero.module.scss';
+import MainButton from '../buttons/mainButton/MainButton';
 
 const HeroSection = () => {
   return (
     <header className={styles.heroWrapper}>
       <h1 className={styles.title}>
-        {/* Cześć, */}
-        Test
+        Cześć,
         <br />
-        {/* tu Kuba */}
-        tu Test
+        tu Kuba
       </h1>
       <p className={styles.description}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam
-        veritatis amet modi illum eius quod nihil illo natus, nostrum
-        necessitatibus error deserunt velit assumenda sequi sint iusto.
-        Incidunt, iste fugit!
+        Witaj na moim blogu!
+        <br />
+        Dzielę się tutaj moimi przemyśleniami i wskazówkami z dziedziny
+        frontendu.
+        <br />
+        Mam nadzieję, że znajdziesz tu coś dla siebie!&nbsp;🚀
       </p>
+      <MainButton>Czytaj więcej</MainButton>
     </header>
   );
 };

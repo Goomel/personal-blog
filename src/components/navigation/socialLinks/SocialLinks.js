@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './socialLinks.module.scss';
-import GithubIcon from '@/assets/icons/github-icon';
-import LinkedinIcon from '@/assets/icons/linkedin-icon';
+import GithubIcon from '@/assets/icons/GithubIcon';
+import LinkedinIcon from '@/assets/icons/LinkedinIcon';
 
 const SocialLinks = () => {
   return (

@@ -15,18 +15,19 @@
 }
 
 .description {
-  font-size: var(--text-base);
-  color: var(--gray-500);
+  font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+  color: var(--gray-400);
   font-family: var(--font-sans);
+  margin-bottom: 2rem;
 }
 
 @include mediaquery('lg') {
   .heroWrapper {
     margin: 6rem 0 0 5rem;
-    max-width: 480px;
+    max-width: 500px;
   }
 
   .description {
-    font-size: var(--text-lg);
+    margin-bottom: 4rem;
   }
 }
