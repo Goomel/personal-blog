@@ -17,7 +17,7 @@ const Navigation = () => {
   };
 
   useEffect(() => {
-    isMobileDevice ? setIsMenuOpen(false) : setIsMenuOpen(true);
+    setIsMenuOpen(!isMobileDevice);
   }, [isMobileDevice]);
 
   return (
