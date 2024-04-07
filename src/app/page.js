@@ -1,5 +1,4 @@
-import { getBlogPosts } from '@/lib/mdxUtils';
-import PostListing from '@/components/blog/postListing/PostListing';
+import RecentPosts from '@/components/blog/recentPosts/recentPosts';
 import Hero from '@/components/hero/Hero';
 
 export const metadata = {
@@ -8,12 +7,10 @@ export const metadata = {
 };
 
 export default function Home() {
-  const allPosts = getBlogPosts();
-
   return (
     <>
       <Hero />
-      <PostListing posts={allPosts} />
+      <RecentPosts />
     </>
   );
 }

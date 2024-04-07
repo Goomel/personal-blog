@@ -12,30 +12,17 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  z-index: 1;
+  z-index: 2;
 
   &.isOpen {
     .hamburgerLine {
       &:first-child {
-        transform: translateY(
-            calc(
-              (var(--gap-between-lines) / 2) +
-                (var(--hamburger-line-height) / 2)
-            )
-          )
-          rotate(45deg);
+        transform: translateY(calc((var(--gap-between-lines) / 2) + (var(--hamburger-line-height) / 2))) rotate(45deg);
         // transform-origin: 50% 0%;
       }
+
       &:last-child {
-        transform: translateY(
-            calc(
-              (
-                  (var(--gap-between-lines) / 2) +
-                    (var(--hamburger-line-height) / 2)
-                ) * -1
-            )
-          )
-          rotate(-45deg);
+        transform: translateY(calc(((var(--gap-between-lines) / 2) + (var(--hamburger-line-height) / 2)) * -1)) rotate(-45deg);
       }
     }
   }

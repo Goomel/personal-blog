@@ -1,0 +1,11 @@
+@import '@/styles/mixins.scss';
+
+.recentPostsWrapper {
+  padding-top: 60px;
+}
+
+@include mediaquery('lg') {
+  .recentPostsWrapper {
+    padding-top: 100px;
+  }
+}

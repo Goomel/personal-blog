@@ -1,15 +1,14 @@
-import React from 'react';
 import Link from 'next/link';
 
 const PostListing = ({ posts }) => {
   return (
-    <div>
+    <>
       {posts.map(({ slug, metadata: { title } }) => (
-        <Link href={`/blog/${slug}`} key={slug}>
-          {title}
-        </Link>
+        <div key={slug}>
+          <Link href={`/blog/${slug}`}>{title}</Link>
+        </div>
       ))}
-    </div>
+    </>
   );
 };
 

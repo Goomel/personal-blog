@@ -2,7 +2,7 @@
 
 .buttonWrapper {
   background-color: var(--yellow-500);
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 30px;
   display: inline-flex;
@@ -11,7 +11,7 @@
 
   .buttonText {
     color: var(--black-500);
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
   }
 
   .arrowWrapper {
@@ -21,6 +21,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     overflow: hidden;
     border-radius: 50%;
     margin-left: 1rem;
@@ -63,10 +64,9 @@
 @include mediaquery('lg') {
   .buttonWrapper {
     padding: 1rem 1.75rem;
-  }
 
-  .buttonText {
-    font-size: var(--text-xl);
+    .buttonText {
+      font-size: var(--text-xl);
+    }
   }
-
 }
