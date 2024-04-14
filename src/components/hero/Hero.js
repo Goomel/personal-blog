@@ -6,7 +6,9 @@ const HeroSection = () => {
   return (
     <header className={styles.heroWrapper}>
       <h1 className={styles.title}>
-        <span>Cześć,</span>
+        <span>
+          Cześć<span className={styles.comma}>,</span>
+        </span>
         <br />
         <span>tu Kuba</span>
       </h1>

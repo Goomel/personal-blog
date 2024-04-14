@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import Navigation from '@/components/navigation/Navigation';
-import { Work_Sans, Anton } from 'next/font/google';
+import { Work_Sans, Archivo_Black } from 'next/font/google';
 import styles from './layout.module.scss';
 import '@/styles/main.scss';
 
@@ -10,7 +10,7 @@ const work_sans = Work_Sans({
   variable: '--font-work-sans'
 });
 
-const anton = Anton({
+const archivo_black = Archivo_Black({
   subsets: ['latin'],
   display: 'swap',
   weight: '400',
@@ -25,7 +25,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={cn(work_sans.variable, anton.variable)}>
+      <body className={cn(work_sans.variable, archivo_black.variable)}>
         <div className={styles.layoutContainer}>
           <Navigation />
           <main>{children}</main>

@@ -1,4 +1,4 @@
-import RecentPosts from '@/components/blog/recentPosts/recentPosts';
+import RecentPosts from '@/components/blog/recentPosts/RecentPosts';
 import Hero from '@/components/hero/Hero';
 
 export const metadata = {

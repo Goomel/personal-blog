@@ -4,6 +4,24 @@
   padding-top: 60px;
 }
 
+.title {
+  font-size: clamp(var(--text-5xl), 10vw, var(--text-8xl));
+  line-height: 0.95;
+  color: var(--white);
+  font-family: var(--font-heading);
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  text-align: end;
+
+  span {
+    &:first-child {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--white);
+    }
+  }
+}
+
 @include mediaquery('lg') {
   .recentPostsWrapper {
     padding-top: 100px;

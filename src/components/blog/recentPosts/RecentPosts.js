@@ -8,7 +8,11 @@ const RecentPosts = () => {
 
   return (
     <section className={styles.recentPostsWrapper}>
-      <h2>Ostatnie wpisy</h2>
+      <h2 className={styles.title}>
+        <span>Ostatnie</span>
+        <br />
+        <span>wpisy</span>
+      </h2>
       <Grid>
         <PostListing posts={allPosts} />
       </Grid>
