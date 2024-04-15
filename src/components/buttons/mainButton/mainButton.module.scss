@@ -59,14 +59,12 @@
   }
 }
 
-
-
 @include mediaquery('lg') {
   .buttonWrapper {
-    padding: 1rem 1.75rem;
+    padding: 1.125rem 2rem;
 
     .buttonText {
-      font-size: var(--text-xl);
+      font-size: var(--text-lg);
     }
   }
 }
