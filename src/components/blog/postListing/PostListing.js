@@ -1,13 +1,17 @@
 import Link from 'next/link';
 import styles from './postListing.module.scss';
+import PostThumbnail from '../postThumbnail/PostThumbnail';
 
 const PostListing = ({ posts }) => {
   return (
     <>
-      {posts.map(({ slug, metadata: { title } }) => (
-        <div className={styles.post} key={slug}>
-          <Link href={`/blog/${slug}`}>{title}</Link>
-        </div>
+      {posts.map(({ slug, metadata: { title, description } }) => (
+        <PostThumbnail
+          slug={slug}
+          title={title}
+          description={description}
+          key={slug}
+        ></PostThumbnail>
       ))}
     </>
   );

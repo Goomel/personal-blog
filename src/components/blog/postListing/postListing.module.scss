@@ -1,13 +1,1 @@
 @import '@/styles/mixins.scss';
-
-.post {
-  background-color: var(--black-400);
-  border-radius: 1rem;
-
-  a {
-    padding: 1rem 1.25rem;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-}

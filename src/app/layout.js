@@ -1,13 +1,14 @@
 import cn from 'classnames';
 import Navigation from '@/components/navigation/Navigation';
-import { Work_Sans, Archivo_Black } from 'next/font/google';
+import { Poppins, Archivo_Black } from 'next/font/google';
 import styles from './layout.module.scss';
 import '@/styles/main.scss';
 
-const work_sans = Work_Sans({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-work-sans'
+  weight: ['300', '400', '500'],
+  variable: '--font-poppins'
 });
 
 const archivo_black = Archivo_Black({
@@ -25,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <body className={cn(work_sans.variable, archivo_black.variable)}>
+      <body className={cn(poppins.variable, archivo_black.variable)}>
         <div className={styles.layoutContainer}>
           <Navigation />
           <main>{children}</main>

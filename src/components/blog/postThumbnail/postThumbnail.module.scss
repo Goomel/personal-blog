@@ -1,0 +1,49 @@
+@import '@/styles/mixins.scss';
+
+.wrapper {
+  background-color: var(--black-400);
+  border-radius: 36px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--black-300);
+  }
+}
+
+.innerWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  color: var(--white);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.description {
+  font-size: var(--text-base);
+}
+
+.readMoreButton {
+  background-color: transparent;
+  border: none;
+  font-size: var(--text-base);
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  cursor: pointer;
+}
+
+@include mediaquery('lg') {
+  .wrapper {
+    padding: 1.5rem 2rem;
+  }
+
+  .description {
+    margin: 0 0 4rem 0;
+  }
+}
