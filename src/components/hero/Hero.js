@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './hero.module.scss';
-import MainButton from '../buttons/mainButton/MainButton';
+import ButtonPrimary from '../buttons/buttonPrimary/ButtonPrimary';
 import Image from 'next/image';
 import laptop from '../../../public/images/laptop.jpg';
 import ContentMediaSection from '../shared/contentMediaSection/ContentMediaSection';
@@ -25,7 +25,7 @@ const HeroSection = () => {
             <br />
             Mam nadzieję, że znajdziesz tu coś dla siebie!&nbsp;🚀
           </p>
-          <MainButton>Czytaj więcej</MainButton>
+          <ButtonPrimary>Czytaj więcej</ButtonPrimary>
         </div>
 
         <div>

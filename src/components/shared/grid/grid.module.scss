@@ -2,6 +2,20 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@include mediaquery('sm') {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@include mediaquery('lg') {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    column-gap: 2.5rem;
+    row-gap: 2rem;
+  }
 }

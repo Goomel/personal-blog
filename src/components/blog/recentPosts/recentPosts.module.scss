@@ -4,6 +4,11 @@
   padding-top: 60px;
 }
 
+.buttonWrapper {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
 .title {
   font-size: clamp(var(--text-5xl), 10vw, var(--text-8xl));
   line-height: 0.95;
@@ -23,6 +28,10 @@
 }
 
 @include mediaquery('lg') {
+  .buttonWrapper {
+    margin-top: 3rem;
+  }
+
   .recentPostsWrapper {
     padding-top: 100px;
   }

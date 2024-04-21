@@ -2,6 +2,7 @@ import { getBlogPosts } from '@/lib/mdxUtils';
 import PostListing from '../postListing/PostListing';
 import Grid from '@/components/shared/grid/Grid';
 import styles from './recentPosts.module.scss';
+import ButtonPrimary from '@/components/buttons/buttonPrimary/ButtonPrimary';
 
 const RecentPosts = () => {
   const allPosts = getBlogPosts();
@@ -16,6 +17,10 @@ const RecentPosts = () => {
       <Grid>
         <PostListing posts={allPosts} />
       </Grid>
+      <div className={styles.buttonWrapper}>
+        <ButtonPrimary>Zobacz wszystkie artykuły</ButtonPrimary>
+        <ButtonPrimary href="#contact">Zobacz wszystkie artykuły</ButtonPrimary>
+      </div>
     </section>
   );
 };

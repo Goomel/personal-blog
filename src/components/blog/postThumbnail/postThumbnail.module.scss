@@ -1,12 +1,17 @@
 @import '@/styles/mixins.scss';
 
 .wrapper {
+  padding: 1rem 2rem;
   background-color: var(--black-400);
   border-radius: 36px;
   transition: background-color 0.2s;
 
   &:hover {
     background-color: var(--black-300);
+
+    .readMoreButton {
+      color: var(--yellow-500);
+    }
   }
 }
 
@@ -15,11 +20,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
 }
 
 .title {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   color: var(--white);
   font-weight: 500;
   margin: 0 0 1rem 0;
@@ -27,20 +32,35 @@
 
 .description {
   font-size: var(--text-base);
+  font-weight: 300;
+  color: var(--gray-200);
+  margin: 0 0 2rem 0;
 }
 
 .readMoreButton {
+  transition: .2s ease-in-out;
   background-color: transparent;
   border: none;
   font-size: var(--text-base);
   font-weight: 500;
   font-family: var(--font-poppins);
   cursor: pointer;
+  letter-spacing: 1px;
+}
+
+@include mediaquery('sm') {
+  .wrapper {
+    padding: 1.5rem 2rem;
+  }
 }
 
 @include mediaquery('lg') {
   .wrapper {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2.5rem;
+  }
+
+  .title {
+    font-size: var(--text-2xl);
   }
 
   .description {
