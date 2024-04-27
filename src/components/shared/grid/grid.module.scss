@@ -3,7 +3,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 @include mediaquery('sm') {

@@ -12,7 +12,7 @@
   }
 }
 
-@include mediaquery('lg') {
+@include mediaquery('md') {
   .sectionWrapper {
     grid-template-columns: 1fr 1fr;
   }

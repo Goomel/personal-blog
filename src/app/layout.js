@@ -1,5 +1,6 @@
 import cn from 'classnames';
 import Navigation from '@/components/navigation/Navigation';
+import Footer from '@/components/footer/Footer';
 import { Poppins, Archivo_Black } from 'next/font/google';
 import styles from './layout.module.scss';
 import '@/styles/main.scss';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         <div className={styles.layoutContainer}>
           <Navigation />
           <main>{children}</main>
+          <Footer />
         </div>
       </body>
     </html>
