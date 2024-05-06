@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import styles from './postListing.module.scss';
 import PostThumbnail from '../postThumbnail/PostThumbnail';
 
 const PostListing = ({ posts }) => {

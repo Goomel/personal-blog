@@ -1,0 +1,61 @@
+@import '@/styles/mixins.scss';
+
+.mediaSectionWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
+
+  &>div:last-child {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.heroSection {
+  text-align: center;
+}
+
+.description {
+  font-size: var(--text-sm);
+  color: var(--gray-100);
+  font-family: var(--font-poppins);
+  font-weight: 300;
+}
+
+.recentPostsWrapper {
+  padding: 60px 0;
+}
+
+@include mediaquery('sm') {
+  .description {
+    font-size: var(--text-base);
+  }
+}
+
+@include mediaquery('md') {
+  .mediaSectionWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .recentPostsWrapper {
+    display: grid;
+  }
+
+  .heroSection,
+  .heroSection h1 {
+    text-align: start;
+  }
+}
+
+@include mediaquery('lg') {
+
+  .mediaSectionWrapper {
+    padding: 80px 0;
+  }
+
+  .description {
+    font-size: var(--text-lg);
+  }
+}

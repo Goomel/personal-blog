@@ -1,3 +1,5 @@
+@import '@/styles/mixins.scss';
+
 .title {
   font-size: clamp(var(--text-5xl), 10vw, var(--text-8xl));
   line-height: 0.95;
@@ -6,7 +8,6 @@
   letter-spacing: 3px;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  text-align: start;
 
   span {
     &:first-child {
@@ -19,10 +20,18 @@
       }
     }
   }
+}
 
-
+.mobileCentered {
+  text-align: center;
 }
 
 .textRight {
   text-align: end;
+}
+
+@include mediaquery('lg') {
+  .mobileCentered {
+    text-align: start;
+  }
 }

@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import ButtonPrimary from '@/components/buttons/buttonPrimary/ButtonPrimary';
-import RecentPosts from '@/components/blog/recentPosts/RecentPosts';
-import styles from '@/components/blog/recentPosts/recentPosts.module.scss';
+import styles from './page.module.scss';
 import ContactForm from '@/components/contactForm/ContactForm';
-import laptop from '../../public/images/laptop.jpg';
 import TitlePrimary from '@/components/titlePrimary/TitlePrimary';
+import laptop from '../../public/images/laptop.jpg';
+import { getBlogPosts } from '@/lib/mdxUtils';
+import PostListing from '@/components/blog/postListing/PostListing';
+import Grid from '@/components/shared/grid/Grid';
+import cn from 'classnames';
 
 export const metadata = {
   title: 'Page Home',
@@ -12,18 +15,20 @@ export const metadata = {
 };
 
 export default function Home() {
+  const allPosts = getBlogPosts();
+
   return (
     <>
-      <header className={styles.heroWrapper}>
-        <div className={styles.sectionWrapper}>
-          <div>
-            <TitlePrimary headingLevel="1">
-              <span>
-                Cześć<span className="comma">,</span>
-              </span>
-              <br />
-              <span>tu Kuba</span>
-            </TitlePrimary>
+      <header className={cn(styles.mediaSectionWrapper, styles.heroSection)}>
+        <div className={styles.headerTextWrapper}>
+          <TitlePrimary headingLevel="1">
+            <span>
+              Cześć<span className="comma">,</span>
+            </span>
+            <br />
+            <span>tu Kuba</span>
+          </TitlePrimary>
+          <div className={styles.descriptionWrapper}>
             <p className={styles.description}>
               Witaj na moim blogu!
               <br />
@@ -34,33 +39,35 @@ export default function Home() {
             </p>
             <ButtonPrimary>Czytaj więcej</ButtonPrimary>
           </div>
+        </div>
 
-          <div>
-            <Image
-              src={laptop}
-              alt="Mężczyzna pracujący z laptopem"
-              width={330}
-              height={500}
-              style={{
-                objectFit: 'cover',
-                maxWidth: '100%'
-              }}
-            />
-          </div>
+        <div>
+          <Image
+            src={laptop}
+            alt="Mężczyzna pracujący z laptopem"
+            width={330}
+            height={500}
+            style={{
+              objectFit: 'cover',
+              maxWidth: '100%'
+            }}
+          />
         </div>
       </header>
+
       <section className={styles.recentPostsWrapper}>
-        <TitlePrimary headingLevel="2" textRight={true}>
+        <TitlePrimary headingLevel="2" align="right">
           <span>Ostatnie</span>
           <br />
           <span>Wpisy</span>
         </TitlePrimary>
-        <RecentPosts />
-        <div className={styles.buttonWrapper}>
-          <ButtonPrimary href="/blog">Zobacz wszystkie artykuły</ButtonPrimary>
-        </div>
+        <Grid>
+          <PostListing posts={allPosts} />
+        </Grid>
+        <ButtonPrimary href="/blog">Zobacz wszystkie artykuły</ButtonPrimary>
       </section>
-      <section className={styles.sectionWrapper}>
+
+      <section className={styles.mediaSectionWrapper}>
         <div>
           <TitlePrimary headingLevel="2">
             <span>Napisz</span>
